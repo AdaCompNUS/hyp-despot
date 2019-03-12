@@ -9,34 +9,20 @@ Cai, P., Luo, Y., Hsu, D. and Lee, W.S., HyP-DESPOT: A Hybrid Parallel Algorithm
 ## Getting Started
 
 ### Pre-requisites
-* ROS
-  * ROS enables HyP-DESPOT to bridge with external system 
-* Catkin
-  * Catkin is a compliation tool designed for ROS based on CMake.
 * Cmake 
   * Version >=3.8 is required for CUDA integration
 * CUDA and an NVIDIA GPU with computational capacity >=3.0
-* libunwind
-  * For memory checking and error handling
-  
-### 1. Create a catkin workspace:
+### 1. Download the HyP-DESPOT package:
 ```bash
-source /opt/ros/kinetic/setup.bash
-mkdir -p ~/catkin_ws/src
-cd ~/catkin_ws/
-catkin_make
-source ~/catkin_ws/devel/setup.bash
+cd ~/workspace
+git clone https://github.com/AdaCompNUS/HyP-DESPOT.git
 ```
-### 2. Download the HyP-DESPOT package:
+### 2. Compile HyP-DESPOT and examples:
 ```bash
-cd ~/catkin_ws/src
-git clone https://github.com/AdaCompNUS/HyP-DESPOT-Release.git
-mv HyP-DESPOT-Release HyP_despot
-```
-### 3. Compile HyP-DESPOT and examples:
-```bash
-cd ~/catkin_ws
-catkin_make --pkg hyp_despot -DCMAKE_BUILD_TYPE=Release 
+cd HyP-DESPOT
+mkdir build; cd build
+cmake ..
+make
 ```
 ## Main Extensions in HyP-DESPOT from the DESPOT Package
 The source files of HyP-DESPOT and examples are in folder [src/HypDespot](src/HypDespot). Main extensions from DESPOT include:
@@ -54,15 +40,7 @@ src/GPUrandom_streams.cu                 GPU version of the RandomStreams class 
 See this [GPU model documentation](doc/Build_GPU_POMDP_model_with_CUDA.md) for detailed descriptions on these extensions and how to build a custom GPU POMDP model.
 
 ## Examples
-The HyP-DESPOT package implements the three examples presented in our [RSS paper](http://motion.comp.nus.edu.sg/wp-content/uploads/2018/06/rss18hyp.pdf). They include:
-
-* Autonomous driving in a crowd [(HyP_examples/CarDriving/)](src/HyP_examples/CarDriving/). The key files in this example are:
-```
-ped_pomdp.cpp                       CPU POMDP model of the car driving problem
-GPU_Car_Drive/GPU_Car_Drive.cu      GPU POMDP model of the car driving problem
-simulator.cpp                       Custom World (simulator) of the problem
-controller.cpp                      The custom planner and the main function
-```
+The HyP-DESPOT package contains two examples presented in our [RSS paper](http://motion.comp.nus.edu.sg/wp-content/uploads/2018/06/rss18hyp.pdf). They include:
 
 * Navigation in a partially known map [(HyP_examples/unkown_navigation/)](src/HyP_examples/unkown_navigation/src). The key files in this example are:
 ```
