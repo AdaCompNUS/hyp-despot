@@ -37,7 +37,7 @@ src/solvers/Hyp_despot.cu                Main file of the HyP-DESPOT solver
 src/Parallel_planner.cu                  Parallel extension of the planner class in DESPOT
 src/GPUrandom_streams.cu                 GPU version of the RandomStreams class in DESPOT
 ```
-See this [GPU model documentation](doc/Build_GPU_POMDP_model_with_CUDA.md) for detailed descriptions on these extensions and how to build a custom GPU POMDP model.
+See this [GPU model documentation](doc/Build_GPU_POMDP_model_with_CUDA.md) for detailed descriptions on these extensions and how to build a custom GPU POMDP model. Refer to this [guide](doc/Nsight_guide.md) for integration with NVidia Nsight.
 
 ## Examples
 The HyP-DESPOT package contains two examples presented in our [RSS paper](http://motion.comp.nus.edu.sg/wp-content/uploads/2018/06/rss18hyp.pdf). They include:
