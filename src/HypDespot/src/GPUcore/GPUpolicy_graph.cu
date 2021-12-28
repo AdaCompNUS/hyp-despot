@@ -9,7 +9,6 @@
 #include <despot/GPUinterface/GPUpomdp.h>
 #include <unistd.h>
 
-#include <despot/GPUutil/GPUmap.h>
 
 using namespace std;
 
