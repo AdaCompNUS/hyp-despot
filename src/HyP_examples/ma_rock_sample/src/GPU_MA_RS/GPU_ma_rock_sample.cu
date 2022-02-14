@@ -236,7 +236,7 @@ DEVICE void Dvc_MultiAgentRockSample::Dvc_Copy_NoAlloc(Dvc_State* des, const Dvc
 	/*Pass member values, assign member pointers to existing state pointer*/
 	const Dvc_MARockSampleState* src_i= static_cast<const Dvc_MARockSampleState*>(src)+pos;
 	if(!offset_des) pos=0;
-	Dvc_MARockSampleState* des_i= static_cast<const Dvc_MARockSampleState*>(des)+pos;
+	Dvc_MARockSampleState* des_i= static_cast<Dvc_MARockSampleState*>(des)+pos;
 
 	des_i->weight = src_i->weight;
 	des_i->scenario_id = src_i->scenario_id;
