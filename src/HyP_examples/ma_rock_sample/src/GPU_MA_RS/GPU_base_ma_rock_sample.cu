@@ -389,7 +389,7 @@ Dvc_State* BaseMultiAgentRockSample::CopyParticlesToGPU(Dvc_State* dvc_particles
 	for (int i=0;i<particles.size();i++)
 	{
 		const MARockSampleState* src=static_cast<const MARockSampleState*>(particles[i]);
-		Dvc_MARockSampleState::CopyToGPU(static_cast<const Dvc_MARockSampleState*>(dvc_particles),src->scenario_id,src);
+		Dvc_MARockSampleState::CopyToGPU(static_cast<Dvc_MARockSampleState*>(dvc_particles),src->scenario_id,src);
 	}
 
 	return dvc_particles;
