@@ -189,7 +189,7 @@ public:
 	Globals::config.NUM_THREADS=5;
 	Globals::config.sim_len=60;
 	Globals::config.time_per_move=1;
-	Globals::config.num_scenarios=5000;
+	// Globals::config.num_scenarios=5000;
 	Globals::config.discount=0.983;
 
 	Obs_type=OBS_LONG64;
